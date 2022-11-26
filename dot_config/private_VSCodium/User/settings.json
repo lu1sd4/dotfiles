@@ -1,0 +1,192 @@
+{
+    "editor.fontSize": 11,
+    "editor.fontFamily": "'FuraCode Nerd Font', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.colorTheme": "vs-wal",
+    "terminal.integrated.fontSize": 12,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.renderWhitespace": "all",
+    "security.workspace.trust.untrustedFiles": "open",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          "--shell-escape",
+          "-xelatex",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-outdir=%OUTDIR%",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "lualatexmk",
+        "command": "latexmk",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-lualatex",
+          "-outdir=%OUTDIR%",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "latexmk_rconly",
+        "command": "latexmk",
+        "args": [
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+          "--shell-escape",
+          "-xelatex",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+          "%DOCFILE%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "rnw2tex",
+        "command": "Rscript",
+        "args": [
+          "-e",
+          "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+        ],
+        "env": {}
+      },
+      {
+        "name": "jnw2tex",
+        "command": "julia",
+        "args": [
+          "-e",
+          "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+        ],
+        "env": {}
+      },
+      {
+        "name": "jnw2texmintex",
+        "command": "julia",
+        "args": [
+          "-e",
+          "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+        ],
+        "env": {}
+      },
+      {
+        "name": "tectonic",
+        "command": "tectonic",
+        "args": [
+          "--synctex",
+          "--keep-logs",
+          "%DOC%.tex"
+        ],
+        "env": {}
+      }
+    ],
+    "ltex.language": "fr",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.fileTypes": [
+      "*.aux",
+      "*.bbl",
+      "*.blg",
+      "*.idx",
+      "*.ind",
+      "*.lof",
+      "*.lot",
+      "*.out",
+      "*.toc",
+      "*.acn",
+      "*.acr",
+      "*.alg",
+      "*.glg",
+      "*.glo",
+      "*.gls",
+      "*.fls",
+      "*.log",
+      "*.fdb_latexmk",
+      "*.snm",
+      "*.synctex(busy)",
+      "*.synctex.gz(busy)",
+      "*.nav",
+      "*.synctex.gz"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "editor.suggestSelection": "first",
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "plantuml.exportOutDir": "./",
+    "plantuml.exportSubFolder": false,
+    "ltex.latex.environments": {
+      "minted": "ignore"
+    },
+    "ltex.latex.commands": {
+      "\\monospaced{}": "dummy",
+      "\\questionpart{}": "dummy",
+      "\\mintinline{}{}": "dummy",
+      "\\Copy{}": "dummy",
+      "\\textit{}": "dummy"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "notebook.compactView": false,
+    "notebook.output.textLineLimit": 500,
+    "notebook.lineNumbers": "on",
+    "[yaml]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cmake.configureOnOpen": true,
+    "RPC.editingText": "Editing some .{extension} file",
+    "RPC.fileInfoText": "Some {language} file, on some line",
+    "RPC.placeholderText": "VSCodium",
+    "RPC.placeholderTextInsiders": "VSCodium",
+    "RPC.viewingText": "Viewing some .{extension} file",
+    "RPC.workspaceText": "In some project",
+    "RPC.debuggingText": "Debugging",
+    "RPC.showProblems": false,
+    "files.associations": {
+      "*.pyx": "cython",
+      "*.rmd": "markdown"
+    },
+    "jupyter.askForKernelRestart": false,
+    "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"></div>",
+    "markdown-pdf.displayHeaderFooter": false,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "ltex.checkFrequency": "manual",
+    "redhat.telemetry.enabled": false,
+    "editor.codeLensFontSize": 12,
+    "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+    },
+    "python.terminal.activateEnvironment": false
+}

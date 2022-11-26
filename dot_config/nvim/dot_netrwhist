@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/lu1sd4/esiee/projects/napp'
+let g:netrw_dirhist_4='/home/lu1sd4/esiee/projects/map_visualization/spatial-exploration/src'
+let g:netrw_dirhist_3='/home/lu1sd4/repos/dotfiles/.config/ranger'
+let g:netrw_dirhist_2='/home/lu1sd4/.zsh'
+let g:netrw_dirhist_1='/home/lu1sd4/repos/dotfiles/.zsh'
+let g:netrw_dirhist_0='/home/lu1sd4/esiee/projects/cortext-explorer/cortext-dataset-api/src'
+let g:netrw_dirhist_9='/home/lu1sd4/esiee/projects/cortext-explorer/cortext-dataset-api'
+let g:netrw_dirhist_8='/home/lu1sd4/esiee/projects/cortext-explorer/cortext-dataset-api/src'
+let g:netrw_dirhist_7='/home/lu1sd4/esiee/projects/cortext-explorer/cortext-dataset-api'
+let g:netrw_dirhist_6='/home/lu1sd4/repos/dotfiles/.zsh'

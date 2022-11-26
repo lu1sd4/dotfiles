@@ -1,0 +1,43 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+shift+B",
+    "command": "editor.action.insertSnippet",
+    "when": "editorLangId == latex && editorTextFocus",
+    "args": {
+        "snippet": "\\textbf{${TM_SELECTED_TEXT}$0}"
+    }
+  },
+  {
+      "key": "ctrl+shift+I",
+      "command": "editor.action.insertSnippet",
+      "when": "editorLangId == latex && editorTextFocus",  // chained clause
+      "args": {
+          "snippet": "\\textit{${TM_SELECTED_TEXT}$0}"
+      }
+  },
+  {
+    "key": "ctrl+shift+M",
+    "command": "editor.action.insertSnippet",
+    "when": "editorLangId == latex && editorTextFocus",  // chained clause
+    "args": {
+        "snippet": "\\texttt{${TM_SELECTED_TEXT}$0}"
+    }
+  },
+  {
+    "key": "ctrl+shift+H",
+    "command": "editor.action.insertSnippet",
+    "when": "editorLangId == latex && editorTextFocus",  // chained clause
+    "args": {
+        "snippet": "@\\codehl{${TM_SELECTED_TEXT}$0}@"
+    }
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "editor.action.fontZoomIn"
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "-workbench.action.zoomIn"
+  }
+]

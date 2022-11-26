@@ -1,0 +1,12 @@
+name: mess
+windows:
+  - name: welcome
+    root: ~
+    layout: even-horizontal
+    panes:
+      - commands:
+        - toilet charcoal
+        - fortune | cowsay -W 60 -f $(find /usr/share/cows -type f | shuf -n 1)
+      - commands:
+        - nvim -n ~/stuff/personal/planning/work
+        focus: true

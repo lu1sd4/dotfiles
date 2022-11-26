@@ -1,0 +1,3 @@
+# Sourced on the start of login shell and after zshrc if interactive
+
+[[ "$(tty)" = "/dev/tty1" ]] && ! pgrep -x i3>/dev/null && exec startx

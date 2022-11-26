@@ -1,0 +1,16 @@
+title: keyboard layout
+options:
+  us-intl:
+    command: setxkbmap
+    args:
+      - us
+      - -variant
+      - altgr-intl
+  us:
+    command: setxkbmap
+    args:
+      - us
+  fr:
+    command: setxkbmap
+    args:
+      - fr
