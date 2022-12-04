@@ -9,7 +9,7 @@ while getopts ":h" o; do case "${o}" in
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 esac done
 
-progsfile="https://raw.githubusercontent.com/lu1sd4/dotfiles/master/packages.csv"
+progsfile="https://raw.githubusercontent.com/lu1sd4/dotfiles/master/installed_packages.csv"
 aurhelper="yay"
 
 ### FUNCTIONS ###
