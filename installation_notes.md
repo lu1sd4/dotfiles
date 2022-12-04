@@ -56,11 +56,7 @@ Format things:
 
 ```
 # EFI System Partition
-<<<<<<< HEAD
-# Run mkfs.fat -F32 /dev/sda1 if you want to wipe the EFI system partition.
-=======
 # Run mkfs.fat -F32 /dev/sda1 if you need to format the EFI partition
->>>>>>> 3292430... Update notes and packages
 
 # root partition
 mkfs.ext4 /dev/sda4
@@ -192,7 +188,7 @@ Then connect to wifi through `nmcli` if necessary
 
 Some things will be here
 ```
-curl -LO https://raw.githubusercontent.com/lu1sd4/dotfiles/master/install.sh
+curl -LO https://raw.githubusercontent.com/lu1sd4/dotfiles/master/install_packages.sh
 sh install.sh
 ```
 
