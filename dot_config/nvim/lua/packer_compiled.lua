@@ -82,6 +82,21 @@ _G.packer_plugins = {
     path = "/home/lu1sd4/.local/share/nvim/site/pack/packer/opt/LeaderF",
     url = "https://hub.fastgit.org/Yggdroot/LeaderF"
   },
+  ["bufferline.nvim"] = {
+    config = { "require('config.bufferline')" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/lu1sd4/.local/share/nvim/site/pack/packer/opt/bufferline.nvim",
+    url = "https://hub.fastgit.org/akinsho/bufferline.nvim"
+  },
+  delimitMate = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/lu1sd4/.local/share/nvim/site/pack/packer/opt/delimitMate",
+    url = "https://hub.fastgit.org/Raimondi/delimitMate"
+  },
   ["impatient.nvim"] = {
     config = { "require('impatient')" },
     loaded = true,
@@ -139,6 +154,21 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/lu1sd4/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://hub.fastgit.org/nvim-telescope/telescope.nvim"
+  },
+  ["vim-matchup"] = {
+    after_files = { "/home/lu1sd4/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/lu1sd4/.local/share/nvim/site/pack/packer/opt/vim-matchup",
+    url = "https://hub.fastgit.org/andymass/vim-matchup"
+  },
+  ["vim-sandwich"] = {
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/lu1sd4/.local/share/nvim/site/pack/packer/opt/vim-sandwich",
+    url = "https://hub.fastgit.org/machakann/vim-sandwich"
   }
 }
 
@@ -154,16 +184,17 @@ time([[Config for impatient.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Leaderf lua require("packer.load")({'LeaderF'}, { cmd = "Leaderf", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Leaderf lua require("packer.load")({'LeaderF'}, { cmd = "Leaderf", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'lualine.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-notify'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'bufferline.nvim', 'vim-sandwich', 'lualine.nvim', 'vim-matchup'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'delimitMate'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

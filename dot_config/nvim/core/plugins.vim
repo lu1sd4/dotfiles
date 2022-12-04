@@ -63,11 +63,16 @@ let g:Lf_ShortcutB = ''
 " set up working directory for git repository
 let g:Lf_WorkingDirectoryMode = 'a'
 
+" dont ignore with .gitignore
+let g:Lf_RgConfig = [
+      \ "--no-ignore"
+\ ]
+
 " Search files in popup window
-nnoremap <leader>ff :<C-U>Leaderf file --popup<CR>
+nnoremap <leader>ff :<C-U>Leaderf file --popup --no-ignore<CR>
 
 " Grep project files in popup window
-nnoremap <leader>fg :<C-U>Leaderf rg --no-messages --popup<CR>
+nnoremap <leader>fg :<C-U>Leaderf rg --no-messages --popup --no-ignore<CR>
 
 " Search vim help files
 nnoremap <leader>fh :<C-U>Leaderf help --popup<CR>
@@ -86,3 +91,19 @@ let g:Lf_PopupColorscheme = 'gruvbox_material'
 " Change keybinding in LeaderF prompt mode, use ctrl-n and ctrl-p to navigate
 " items.
 let g:Lf_CommandMap = {'<C-J>': ['<C-N>'], '<C-K>': ['<C-P>']}
+
+
+""""""""""""""""""""""""""""vim-matchup settings"""""""""""""""""""""""""""""
+" Improve performance
+let g:matchup_matchparen_deferred = 1
+let g:matchup_matchparen_timeout = 100
+let g:matchup_matchparen_insert_timeout = 30
+
+" Enhanced matching with matchup plugin
+let g:matchup_override_vimtex = 1
+
+" Whether to enable matching inside comment or string
+let g:matchup_delim_noskips = 0
+
+" Show offscreen match pair in popup window
+let g:matchup_matchparen_offscreen = {'method': 'popup'}

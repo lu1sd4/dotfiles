@@ -112,6 +112,7 @@ keymap.set("n", "/", [[/\v]])
 -- Change current working directory locally and print cwd after that,
 -- see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
 keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change cwd" })
+keymap.set("n", "<leader>gcd", "<cmd>cd %:p:h<cr><cmd>pwd<cr>", { desc = "change global cwd" })
 
 -- Use Esc to quit builtin terminal
 keymap.set("t", "<Esc>", [[<c-\><c-n>]])

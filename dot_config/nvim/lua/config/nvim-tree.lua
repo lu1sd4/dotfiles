@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 local nvim_tree = require("nvim-tree")
-
 nvim_tree.setup {
+
   auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
@@ -12,12 +12,12 @@ nvim_tree.setup {
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
-  update_cwd = false,
+  sync_root_with_cwd = true,
   view = {
     width = 30,
     hide_root_folder = false,
     side = "left",
-    preserve_window_proportions = false,
+    preserve_window_proportions = true,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
@@ -72,7 +72,7 @@ nvim_tree.setup {
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 400,
   },
   actions = {

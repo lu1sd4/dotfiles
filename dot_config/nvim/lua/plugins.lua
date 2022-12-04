@@ -1,6 +1,6 @@
 local fn = vim.fn
-local api = vim.api
 
+local api = vim.api
 vim.g.package_home = fn.stdpath("data") .. "/site/pack/packer/"
 local packer_install_dir = vim.g.package_home .. "/opt/packer.nvim"
 
@@ -56,6 +56,20 @@ packer.startup({
       cond = firenvim_not_active,
       config = [[require('config.statusline')]],
     }
+
+    use { "akinsho/bufferline.nvim", event = "VimEnter",
+      cond = firenvim_not_active,
+      config = [[require('config.bufferline')]]
+    }
+
+    -- Automatic insertion and deletion of a pair of characters
+    use { "Raimondi/delimitMate", event = "InsertEnter" }
+
+    -- Plugin to manipulate character pairs quickly
+    use { "machakann/vim-sandwich", event = "VimEnter" }
+
+    -- Modern matchit implementation
+    use { "andymass/vim-matchup", event = "VimEnter" }
 
     -- notification plugin
     use({

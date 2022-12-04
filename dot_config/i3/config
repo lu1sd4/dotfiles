@@ -94,8 +94,9 @@ exec --no-startup-id dunst
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term --class floating
+bindsym $mod+Return exec $term -e $shell -c "tmux attach -t mess || tmux new -s mess"
+bindsym $mod+Shift+Return exec $term --class floating -e $shell -c "tmux attach -t mess || tmux new -s mess"
+bindsym $mod+Shift+B exec $term -e $shell -c "tmux attach -t code || tmux new -s code"
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
