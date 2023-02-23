@@ -74,9 +74,6 @@ exec --no-startup-id udiskie
 exec_always --no-startup-id wal -R -a 90
 exec_always --no-startup-id feh --bg-scale ~/tmp/vitamin-d.png
 
-# bar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
 # composite manager
 # exec_always --no-startup-id "killall -q compton; compton"
 
@@ -281,5 +278,8 @@ bindsym Shift+Print exec "scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -se
 # show planning on workspace 1
 exec $term --class floating -o window.dimensions.lines=20 -o window.dimensions.columns=48 --title 'welcome' -e $shell -c "tmux | teamocil --here startup"
 
-
 exec --no-startup-id autorandr --change
+
+# bar
+
+exec_always --no-startup-id ~/.config/i3/startup"
