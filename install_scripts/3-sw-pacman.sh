@@ -40,6 +40,7 @@ PKGS=(
     'exa'
     'bat'
     'tealdeer'
+    'tmux'
 
     # disk
 

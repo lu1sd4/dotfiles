@@ -216,9 +216,10 @@ Install essentials
 
 ```
 cd install_scripts
+chmod +x *.sh
 ./1-x.sh
 ./2-hw.sh
 ./3-sw-pacman.sh
-./3-sw-aur.sh
+./4-sw-aur.sh
 ./5-setup.sh
 ```
