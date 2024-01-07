@@ -92,7 +92,7 @@ Install packages
 
 ```
 # Install packages
-pacstrap /mnt base base-devel linux linux-firmware neovim networkmanager git
+pacstrap /mnt base base-devel linux linux-firmware neovim networkmanager git zsh reflector
 ```
 
 **Note:** With a not recent arch ISO, there might be keyring errors, run `pacman -Sy archlinux-keyring` to update keyring.
@@ -170,6 +170,13 @@ nvim /etc/hosts
 
 ```
 
+Set the root password
+
+```
+passwd
+```
+
+
 Press `ctrl+d` to exit `arch-chroot`.
 
 ```
@@ -179,11 +186,31 @@ reboot
 
 7. After reboot
 
+update keyring and packages
+
+```
+pacman -S archlinux-keyring
+pacman -Syu 
+```
+
+create user
+
+```
+useradd -m -g wheel -s /bin/zsh lu1sd4
+usermod -a -G wheel lu1sd4
+mkdir -p /home/lu1sd4
+chown lu1sd4:wheel /home/lu1sd4
+echo "lu1sd4:password" | chpasswd
+echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL">> /etc/sudoers
+```
+
 enable NetworkManager
 
 ```
 systemctl enable --now NetworkManager
 ```
+
+logout and login with new user
 
 Connect to wifi network
 
@@ -215,7 +242,7 @@ git clone https://github.com/lu1sd4/dotfiles.git
 Install essentials
 
 ```
-cd install_scripts
+cd dotfiles/install_scripts
 chmod +x *.sh
 ./1-x.sh
 ./2-hw.sh
@@ -223,3 +250,35 @@ chmod +x *.sh
 ./4-sw-aur.sh
 ./5-setup.sh
 ```
+
+Reboot
+
+```
+reboot
+```
+
+TODO
+
+install_scripts:
+
+- 3-sw-pacman:
+    - add dmenu
+    - add terminus-font
+    - add 
+    - terminal: 
+        - remove 'zsh' -> installed manually
+    - web:
+        - add librewolf
+- 4-sw-aur
+    - add nvm
+
+- 5-setup
+    - add pyenv
+    - run tldr update once
+
+dotfiles
+
+.xinitrc: just leave exec i3 no need for Xresources
+.zshrc: add 'source /usr/share/nvm/init-nvm.sh'
+.zsh/vars: NVM_DIR is now /usr/share/nvm
+alacritty config files are now toml: use alacritty migrate and update i3 launcher line
